@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, Platform, StyleSheet } from 'react-native';
+import { Image, Platform, StyleSheet } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -7,7 +7,7 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import { Ionicons } from '@expo/vector-icons';
 
 import WelcomeScreen from '../WelcomeScreen';
-import Settings from '../Settings';
+import Account from '../Account';
 import colors from '../../config/colors';
 import SearchScreen from '../SearchScreen';
 import InsertJobScreen from '../InsertJobScreen';
@@ -15,7 +15,7 @@ import InsertJobScreen from '../InsertJobScreen';
 const homeName = 'Home';
 const searchName = 'Job Suche';
 const insertName = 'Job erstellen';
-const settingsName = 'Settings';
+const accountName = 'Sign In / Sign up';
 
 const BottomTab = createBottomTabNavigator();
 const TopTab = createMaterialTopTabNavigator();
@@ -24,11 +24,10 @@ const NavbarTabs = () => {
     if (Platform.OS === 'web') {
         return (
             <TopTab.Navigator>
-                <TopTab.Screen options={{tabBarLabel: () => <Image source={require('../../assets/Logo.png')} style={{position: 'absolute', top: -20, left: -50, resizeMode: 'center', width: 100, height: 40, }} />}} name={'logo'} component={WelcomeScreen} />
-                <TopTab.Screen name={homeName} component={WelcomeScreen} />
+                <TopTab.Screen options={{tabBarLabel: () => <Image source={require('../../assets/Logo.png')} style={{position: 'absolute', top: -20, left: -50, resizeMode: 'center', width: 100, height: 40, }} />}} name={'Home'} component={WelcomeScreen} />
                 <TopTab.Screen name={searchName} component={SearchScreen} />
                 <TopTab.Screen name={insertName} component={InsertJobScreen} />
-                <TopTab.Screen name={settingsName} component={Settings} />
+                <TopTab.Screen name={accountName} component={Account} />
             </TopTab.Navigator>
         )
     } else {
@@ -43,7 +42,7 @@ const NavbarTabs = () => {
         
                         if (rn === homeName) {
                             iconName = focused ? 'home' : 'home-outline'
-                        } else if (rn === settingsName) {
+                        } else if (rn === accountName) {
                             iconName = focused ? 'list' : 'list-outline'
                         } else if (rn === searchName) {
                             iconName = focused ? 'search' : 'search-outline'
@@ -60,7 +59,7 @@ const NavbarTabs = () => {
                 <BottomTab.Screen name={homeName} component={WelcomeScreen} />
                 <BottomTab.Screen name={searchName} component={SearchScreen} />
                 <BottomTab.Screen name={insertName} component={InsertJobScreen} />
-                <BottomTab.Screen name={settingsName} component={Settings} />
+                <BottomTab.Screen name={accountName} component={Account} />
             </BottomTab.Navigator>
         )
     }
@@ -68,9 +67,11 @@ const NavbarTabs = () => {
 
 function Navbar() {
     return (
-        <NavigationContainer>
-            <NavbarTabs />
-        </NavigationContainer>
+        <>
+            <NavigationContainer>
+                <NavbarTabs />
+            </NavigationContainer>
+        </>
     );
 }
 

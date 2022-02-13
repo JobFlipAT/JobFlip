@@ -1,95 +1,116 @@
 import React from 'react';
-import { View, Text, StyleSheet, TextInput } from 'react-native';
+import { View, Text, StyleSheet, TextInput, ScrollView } from 'react-native';
 import colors from '../config/colors';
+import Footer from './footer/Footer';
 
-function WelcomeScreen(navigation) {
+function WelcomeScreen( {navigation} ) {
     return (
-        <View style={styles.contianer}>
+        <ScrollView style={styles.contianer}>
             <View style={styles.landingPage}>
-                <Text>Jobs annehmen oder Jobs online stellen</Text>
+                <Text style={styles.title}>Jobs annehmen oder Jobs online stellen mit Jobflip</Text>
                 <TextInput placeholder='Was suchen Sie heute?' style={styles.input} />
-            </View>
-            <View style={styles.choose}>
-                <Text>Job annehmen / job inserieren</Text>
+            {/* </View>
+            <View style={styles.choose}> */}
+                {/* <View style={styles.choose}>
+                    <View>
+                        <Text>Job annehmen</Text>
+                    </View>
+                    <View>
+                        <Text>job inserieren</Text>
+                    </View>
+                </View> */}
             </View>
             <Text>Die neusten Jobs:</Text>
             <View style={styles.newJobs}>
-                <View style={{borderWidth: 1, margin: 5, height: 200, width: 150}}>
+                <View style={{borderWidth: 1, margin: 5, height: 190, width: 150}}>
                     <Text>Job 1</Text>
                 </View>
-                <View style={{borderWidth: 1, margin: 5, height: 200, width: 150}}>
+                <View style={{borderWidth: 1, margin: 5, height: 190, width: 150}}>
                     <Text>Job 1</Text>
                 </View>
-                <View style={{borderWidth: 1, margin: 5, height: 200, width: 150}}>
+                <View style={{borderWidth: 1, margin: 5, height: 190, width: 150}}>
                     <Text>Job 1</Text>
                 </View>
-                <View style={{borderWidth: 1, margin: 5, height: 200, width: 150}}>
+                <View style={{borderWidth: 1, margin: 5, height: 190, width: 150}}>
                     <Text>Job 1</Text>
                 </View>
-                <View style={{borderWidth: 1, margin: 5, height: 200, width: 150}}>
+                <View style={{borderWidth: 1, margin: 5, height: 190, width: 150}}>
                     <Text>Job 1</Text>
                 </View>
-                <View style={{borderWidth: 1, margin: 5, height: 200, width: 150}}>
+                <View style={{borderWidth: 1, margin: 5, height: 190, width: 150}}>
                     <Text>Job 1</Text>
                 </View>
-                <View style={{borderWidth: 1, margin: 5, height: 200, width: 150}}>
+                <View style={{borderWidth: 1, margin: 5, height: 190, width: 150}}>
                     <Text>Job 1</Text>
                 </View>
-                <View style={{borderWidth: 1, margin: 5, height: 200, width: 150}}>
+                <View style={{borderWidth: 1, margin: 5, height: 190, width: 150}}>
                     <Text>Job 1</Text>
                 </View>
-                <View style={{borderWidth: 1, margin: 5, height: 200, width: 150}}>
+                <View style={{borderWidth: 1, margin: 5, height: 190, width: 150}}>
                     <Text>Job 1</Text>
                 </View>
-                <View style={{borderWidth: 1, margin: 5, height: 200, width: 150}}>
+                <View style={{borderWidth: 1, margin: 5, height: 190, width: 150}}>
                     <Text>Job 1</Text>
                 </View>
             </View>
-        </View>
+            <Footer navigation={navigation} />  
+        </ScrollView>
     );
 }
 
 const styles = StyleSheet.create({
     contianer: {
-        flex: 1, 
-        justifyContent: 'center', 
-        alignItems: 'center',
-        backgroundColor: colors.white_color
+        backgroundColor: colors.white_color,
     },
     landingPage: {
-        flex: 1,
+        height: 200,
         margin: 5,
         borderRadius: 10,
         width: '100%',
-        backgroundColor: colors.primary_color,
+        backgroundColor: colors.white_color,
+        shadowColor: colors.black_color,
+        shadowOpacity: 0.15,
+        shadowRadius: 15,
         justifyContent: 'center', 
         alignItems: 'center',
     },
+    title: {
+        fontSize: 30,
+    },
     input: {
         height: 40,
-        margin: 12,
+        margin: 40,
+        borderColor: colors.primary_accent_color,
         borderWidth: 1,
         padding: 10,
         borderRadius: 5,
     },
+    backgroundVideo: {
+        height: 100,
+        width: 100,
+    },
     choose: {
-        flex: 1,
-        margin: 5,
+        flexDirection: 'row',
+        height: 40,
         borderRadius: 10,
         width: '100%',
-        backgroundColor: colors.primary_accent_color,
+        backgroundColor: colors.white_color,
+        shadowColor: colors.black_color,
+        shadowOpacity: 0.15,
+        shadowRadius: 15,
         justifyContent: 'center', 
         alignItems: 'center',
     },
     newJobs: {
-        flex: 1,
+        height: 200,
         margin: 5,
         borderRadius: 10,
         width: '100%',
-        backgroundColor: colors.secondary_accent_color,
+        backgroundColor: colors.white_color,
+        shadowColor: colors.black_color,
+        shadowOpacity: 0.15,
+        shadowRadius: 15,
         flexDirection: 'row',
-        // justifyContent: 'center', 
-        // alignItems: 'center',
     }
 })
 
