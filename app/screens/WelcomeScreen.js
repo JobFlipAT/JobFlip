@@ -1,60 +1,43 @@
 import React from 'react';
 import { View, Text, StyleSheet, TextInput, ScrollView } from 'react-native';
 import colors from '../config/colors';
+import JobCards from './cards/JobCards';
 import Footer from './footer/Footer';
 
 function WelcomeScreen( {navigation} ) {
     return (
-        <ScrollView style={styles.contianer}>
-            <View style={styles.landingPage}>
-                <Text style={styles.title}>Jobs annehmen oder Jobs online stellen mit Jobflip</Text>
-                <TextInput placeholder='Was suchen Sie heute?' style={styles.input} />
-            {/* </View>
-            <View style={styles.choose}> */}
-                {/* <View style={styles.choose}>
-                    <View>
-                        <Text>Job annehmen</Text>
-                    </View>
-                    <View>
-                        <Text>job inserieren</Text>
-                    </View>
-                </View> */}
-            </View>
-            <Text>Die neusten Jobs:</Text>
-            <View style={styles.newJobs}>
-                <View style={{borderWidth: 1, margin: 5, height: 190, width: 150}}>
-                    <Text>Job 1</Text>
+        <>
+            <ScrollView style={styles.contianer}>
+                <View style={styles.landingPage}>
+                    <Text style={styles.title}>Jobs annehmen oder Jobs online stellen mit Jobflip</Text>
+                    <TextInput placeholder='Was suchen Sie heute?' style={styles.input} />
+                {/* </View>
+                <View style={styles.choose}> */}
+                    {/* <View style={styles.choose}>
+                        <View>
+                            <Text>Job annehmen</Text>
+                        </View>
+                        <View>
+                            <Text>job inserieren</Text>
+                        </View>
+                    </View> */}
                 </View>
-                <View style={{borderWidth: 1, margin: 5, height: 190, width: 150}}>
-                    <Text>Job 1</Text>
+                <Text>Die neusten Jobs:</Text>
+                <View style={styles.newJobs}>
+                    <JobCards img={require('../assets/garden.jpg')} price='200€/h' title='This is the Title' rating='5S (5)' />
+                    <JobCards img={require('../assets/city.jpg')} price='100€/h' title='This is another Title' rating='4.3S (12K)'  />
+                    <JobCards img={require('../assets/kitten.jpg')} price='2200€/h' title='The same' rating='1.2S (4.5K)'  />
+                    <JobCards img={require('../assets/opel-gt.jpg')} price='20€/h' title='This is the Title' rating='5S (5)'  />
+                    <JobCards img={require('../assets/playground.jpg')} price='30€/h' title='This is the Title' rating='5S (5)'  />
+                    <JobCards img={require('../assets/garden.jpg')} price='220€/h' title='This is the Title' rating='5S (5)'  />
+                    <JobCards img={require('../assets/city.jpg')} price='150€/h' title='This is the Title' rating='5S (5)'  />
+                    <JobCards img={require('../assets/kitten.jpg')} price='340€/h' title='This is the Title' rating='5S (5)'  />
+                    <JobCards img={require('../assets/opel-gt.jpg')} price='200€/h' title='This is the Title' rating='5S (5)'  />
+                    <JobCards img={require('../assets/playground.jpg')} price='120€/h' title='This is the Title' rating='5S (5)'  />
                 </View>
-                <View style={{borderWidth: 1, margin: 5, height: 190, width: 150}}>
-                    <Text>Job 1</Text>
-                </View>
-                <View style={{borderWidth: 1, margin: 5, height: 190, width: 150}}>
-                    <Text>Job 1</Text>
-                </View>
-                <View style={{borderWidth: 1, margin: 5, height: 190, width: 150}}>
-                    <Text>Job 1</Text>
-                </View>
-                <View style={{borderWidth: 1, margin: 5, height: 190, width: 150}}>
-                    <Text>Job 1</Text>
-                </View>
-                <View style={{borderWidth: 1, margin: 5, height: 190, width: 150}}>
-                    <Text>Job 1</Text>
-                </View>
-                <View style={{borderWidth: 1, margin: 5, height: 190, width: 150}}>
-                    <Text>Job 1</Text>
-                </View>
-                <View style={{borderWidth: 1, margin: 5, height: 190, width: 150}}>
-                    <Text>Job 1</Text>
-                </View>
-                <View style={{borderWidth: 1, margin: 5, height: 190, width: 150}}>
-                    <Text>Job 1</Text>
-                </View>
-            </View>
+            </ScrollView>
             <Footer navigation={navigation} />  
-        </ScrollView>
+        </>
     );
 }
 
