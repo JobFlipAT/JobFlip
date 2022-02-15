@@ -52,6 +52,7 @@ const Test = () => {
                     <View style={styles.signIn}>
                         <TextInput style={styles.input} placeholder='E-Mail' />
                         <TextInput style={styles.input} placeholder='Password' />
+                        <TextInput style={styles.input} placeholder='Password erneut eingeben' />
                         <TouchableOpacity onPress={() => console.log('signup')} style={styles.button}>
                             <Text>Sign In</Text>
                         </TouchableOpacity>

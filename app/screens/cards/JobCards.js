@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, StyleSheet, Image, Pressable } from 'react-native';
 import colors from '../../config/colors';
+import JobDetailCard from './JobDetailCard';
 
 function JobCards(props) {
+    const [modalVisivile, setModalVisible] = useState(false);
+
     return (
-        <Pressable style={styles.container} onPress={() => console.log('pressed')}>
-            <Image source={props.img} style={styles.image} />
-            <Text style={styles.pricing}>{props.price}</Text>
-            <Text style={styles.title}>{props.title}</Text>
-            <Text style={styles.rating}>{props.rating}</Text>
-        </Pressable>
+        <>
+            <Pressable style={styles.container} onPress={() => setModalVisible(true)}>
+                <Image source={props.img} style={styles.image} />
+                <Text style={styles.pricing}>{props.pricing}</Text>
+                <Text style={styles.title}>{props.title}</Text>
+                <Text style={styles.rating}>{props.rating}</Text>
+            </Pressable>
+            <JobDetailCard modalVisible={modalVisivile} setModalVisible={setModalVisible} 
+                img={props.img} pricing={props.pricing} title={props.title} rating={props.rating} />
+        </>
     );
 }
 
