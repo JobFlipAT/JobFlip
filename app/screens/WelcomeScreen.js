@@ -1,8 +1,10 @@
-import React from 'react';
-import { View, Text, StyleSheet, TextInput, ScrollView } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, TextInput, ScrollView, Pressable, Animated, Platform } from 'react-native';
 import colors from '../config/colors';
 import JobCards from './cards/JobCards';
 import Footer from './footer/Footer';
+
+import { Ionicons } from '@expo/vector-icons';
 
 function WelcomeScreen( {navigation} ) {
     return (
@@ -23,7 +25,48 @@ function WelcomeScreen( {navigation} ) {
                     </View> */}
                 </View>
                 <Text>Die neusten Jobs:</Text>
-                <View style={styles.newJobs}>
+                <HorizontalScroll />
+                <Footer navigation={navigation} />  
+            </ScrollView>
+        </>
+    );
+}
+
+const HorizontalScroll = () => {
+    const scroll = new Animated.Value(0);
+
+    const scrollRight = () => {
+        let tempscroll;
+        if (scroll._value <= -240*4) {
+            tempscroll = -240*4;
+        } else {
+            tempscroll = scroll._value-240;
+        }
+        Animated.timing(scroll, {
+            toValue: tempscroll,
+            duration: 1000,
+            useNativeDriver: true
+        }).start();
+    };
+  
+    const scrollLeft = () => {
+        let tempscroll;
+        if (scroll._value >= 0) {
+            tempscroll = 0;
+        } else {
+            tempscroll = scroll._value+240;
+        }
+        Animated.timing(scroll, {
+            toValue: tempscroll,
+            duration: 1000,
+            useNativeDriver: true
+        }).start();
+    };
+
+    if (Platform.OS === 'web') {
+        return (
+            <View style={styles.newJobs}>
+                <Animated.View style={{transform: [{ translateX: scroll}], flexDirection: 'row'}}>
                     <JobCards img={require('../assets/garden.jpg')} pricing='200€/h' title='This is the Title' rating='5S (5)' />
                     <JobCards img={require('../assets/city.jpg')} pricing='100€/h' title='This is another Title' rating='4.3S (12K)'  />
                     <JobCards img={require('../assets/kitten.jpg')} pricing='2200€/h' title='The same' rating='1.2S (4.5K)'  />
@@ -34,11 +77,31 @@ function WelcomeScreen( {navigation} ) {
                     <JobCards img={require('../assets/kitten.jpg')} pricing='340€/h' title='This is the Title' rating='5S (5)'  />
                     <JobCards img={require('../assets/opel-gt.jpg')} pricing='200€/h' title='This is the Title' rating='5S (5)'  />
                     <JobCards img={require('../assets/playground.jpg')} pricing='120€/h' title='This is the Title' rating='5S (5)'  />
-                </View>
+                </Animated.View>
+                <Pressable onPress={scrollRight} style={[styles.scrollButton, styles.scrollButtonRight]}>
+                    <Ionicons name="chevron-forward-outline" size={80}></Ionicons>
+                </Pressable>
+                <Pressable onPress={scrollLeft}style={[styles.scrollButton, styles.scrollButtonLeft]}>
+                    <Ionicons name="chevron-back-outline" size={80}></Ionicons>
+                </Pressable>
+            </View>
+        )
+    } else {
+        return (
+            <ScrollView style={styles.newJobs} horizontal={true}>
+                <JobCards img={require('../assets/garden.jpg')} pricing='200€/h' title='This is the Title' rating='5S (5)' />
+                <JobCards img={require('../assets/city.jpg')} pricing='100€/h' title='This is another Title' rating='4.3S (12K)'  />
+                <JobCards img={require('../assets/kitten.jpg')} pricing='2200€/h' title='The same' rating='1.2S (4.5K)'  />
+                <JobCards img={require('../assets/opel-gt.jpg')} pricing='45€/h' title='Auto Waschen' rating='5S (5)'  />
+                <JobCards img={require('../assets/playground.jpg')} pricing='30€/h' title='This is the Title' rating='5S (5)'  />
+                <JobCards img={require('../assets/garden.jpg')} pricing='220€/h' title='This is the Title' rating='5S (5)'  />
+                <JobCards img={require('../assets/city.jpg')} pricing='150€/h' title='This is the Title' rating='5S (5)'  />
+                <JobCards img={require('../assets/kitten.jpg')} pricing='340€/h' title='This is the Title' rating='5S (5)'  />
+                <JobCards img={require('../assets/opel-gt.jpg')} pricing='200€/h' title='This is the Title' rating='5S (5)'  />
+                <JobCards img={require('../assets/playground.jpg')} pricing='120€/h' title='This is the Title' rating='5S (5)'  />
             </ScrollView>
-            <Footer navigation={navigation} />  
-        </>
-    );
+        )
+    }
 }
 
 const styles = StyleSheet.create({
@@ -85,15 +148,26 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     newJobs: {
-        height: 200,
         margin: 5,
         borderRadius: 10,
-        width: '100%',
         backgroundColor: colors.white_color,
         shadowColor: colors.black_color,
         shadowOpacity: 0.15,
-        shadowRadius: 15,
-        flexDirection: 'row',
+        shadowRadius: 15
+    },
+    scrollButton: {
+        position: 'absolute',
+        top: '50%',
+        transform: [{ translateY: '-50%'}],
+        backgroundColor: colors.white_color,
+        opacity: 0.5,
+        borderRadius: 10
+    },
+    scrollButtonLeft: {
+        left: 0
+    },
+    scrollButtonRight: {
+        right: 0
     }
 })
 
