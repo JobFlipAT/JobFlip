@@ -1,6 +1,5 @@
 import React from 'react';
 import { Image, Platform, StyleSheet } from 'react-native';
-
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
@@ -20,14 +19,14 @@ const accountName = 'Sign In / Sign up';
 const BottomTab = createBottomTabNavigator();
 const TopTab = createMaterialTopTabNavigator();
 
-const NavbarTabs = () => {
+const NavbarTabs = (props) => {
     if (Platform.OS === 'web') {
         return (
             <TopTab.Navigator>
                 <TopTab.Screen options={{tabBarLabel: () => <Image source={require('../../assets/Logo.png')} style={{position: 'absolute', top: -20, left: -50, resizeMode: 'center', width: 100, height: 40, }} />}} name={'Home'} component={WelcomeScreen} />
                 <TopTab.Screen name={searchName} component={SearchScreen} />
                 <TopTab.Screen name={insertName} component={InsertJobScreen} />
-                <TopTab.Screen name={accountName} component={Account} />
+                <TopTab.Screen name={props.userName === '' ? accountName : 'Hi ' + props.userName} component={Account} initialParams={{ setUserNameValue: props.setUserNameValue, userName: props.userName }} />
             </TopTab.Navigator>
         )
     } else {
@@ -65,11 +64,11 @@ const NavbarTabs = () => {
     }
 }
 
-function Navbar() {
+function Navbar(props) {
     return (
         <>
             <NavigationContainer>
-                <NavbarTabs />
+                <NavbarTabs userName={props.userName} setUserNameValue={props.setUserNameValue} />
             </NavigationContainer>
         </>
     );

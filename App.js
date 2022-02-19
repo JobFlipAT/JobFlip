@@ -1,13 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import colors from './app/config/colors';
 import Navbar from './app/screens/navbar/Navbar';
 
 export default function App() {
+  const [userName, setUserName] = useState('');
+
+  const setUserNameValue = (newUserName) => {
+    setUserName(newUserName)
+  }
+
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <Navbar />
+      <Navbar userName={userName} setUserNameValue={setUserNameValue} />
     </View>
   );
 }
