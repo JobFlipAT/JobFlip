@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TextInput, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, TextInput, ScrollView, TextPropTypes } from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
+import MultiSlider from '@ptomasroos/react-native-multi-slider';
 
 import colors from '../config/colors';
 import JobCards from './cards/JobCards';
@@ -19,6 +20,23 @@ function SearchScreen( {navigation} ) {
         {label: 'Standort zuerst', value: 'apple'},
         {label: 'Zeit zuerst', value: 'banana'},
     ]);
+    const [multiSliderValue, setMultiSliderValue] = useState([0, 100])
+    const multiSliderValuesChange = (values) => setMultiSliderValue(values)
+
+    const setSliderValue = (multi, value) => {
+        let number = parseInt(value);
+        if (multi === 0) {
+            if (isNaN(number)) {
+                number = 0;
+            }
+            setMultiSliderValue([number,multiSliderValue[1]])
+        } else {
+            if (isNaN(number)) {
+                number = 100;
+            }
+            setMultiSliderValue([multiSliderValue[0], number])
+        }
+    }
 
     return (
         <ScrollView style={styles.container}>
@@ -32,7 +50,21 @@ function SearchScreen( {navigation} ) {
                                     setOpen={setOpenKategories} setValue={setValueKategories} setItems={setItemsKategories} />
                     <TextInput placeholder='Entfernung' style={styles.input} />
                     <TextInput placeholder='Standort' style={styles.input} />
-                    <TextInput placeholder='Lohn = Slider' style={styles.input} />
+                    <View style={styles.sliderwrapper}>
+                        <Text>Lohn von: </Text>
+                        <TextInput keyboardType='number-pad' value={multiSliderValue[0]} style={styles.sliderinput} onChangeText={(value) => setSliderValue(0, value)} />
+                        <Text>Lohn von: </Text>
+                        <TextInput keyboardType='number-pad' value={multiSliderValue[1]} style={styles.sliderinput} onChangeText={(value) => setSliderValue(1, value)} />
+                    </View>
+                    <MultiSlider
+                        values={[multiSliderValue[0], multiSliderValue[1]]}
+                        sliderLength={180}
+                        onValuesChange={multiSliderValuesChange}
+                        min={0}
+                        max={100}
+                        allowOverlap={false}
+                        minMarkerOverlapDistance={10}
+                    />
                     <DropDownPicker style={styles.dropdown} open={open} value={value} items={items} 
                                     setOpen={setOpen} setValue={setValue} setItems={setItems} />
                 </View>
@@ -104,6 +136,12 @@ const styles = StyleSheet.create({
         width: '100%',
         marginBottom: 10,
         marginTop: 20
+    },
+    sliderwrapper: {
+        flexDirection: 'row'
+    },
+    sliderinput: {
+        width: 25
     },
     jobs: {
         flex: 1,
