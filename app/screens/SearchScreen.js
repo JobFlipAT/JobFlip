@@ -96,15 +96,15 @@ function SearchScreen( {navigation} ) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: colors.white_color
+        backgroundColor: 'rgba(' + colors.white_color + ', 1)'
     },
     header: {
         height: 100,
         margin: 5,
         borderRadius: 10,
         width: '100%',
-        backgroundColor: colors.white_color,
-        shadowColor: colors.black_color,
+        backgroundColor: 'rgba(' + colors.white_color + ', 1)',
+        shadowColor: 'rgba(' + colors.black_color + ', 1)',
         shadowOpacity: 0.15,
         shadowRadius: 15,
         justifyContent: 'center'
@@ -122,8 +122,8 @@ const styles = StyleSheet.create({
         margin: 10,
         padding: 10,
         borderRadius: 10,
-        backgroundColor: colors.white_color,
-        shadowColor: colors.black_color,
+        backgroundColor: 'rgba(' + colors.white_color + ', 1)',
+        shadowColor: 'rgba(' + colors.black_color + ', 1)',
         shadowOpacity: 0.15,
         shadowRadius: 15
     },

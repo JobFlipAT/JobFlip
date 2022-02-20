@@ -14,9 +14,9 @@ function Footer( {navigation} ) {
                     <Image source={require('../../assets/Logo.png')} style={{resizeMode: 'center', width: 100, height: 40, }} />
                 </Pressable>
                 <View style={styles.socialcontainer}>
-                    <Ionicons name={"logo-instagram"} style={styles.icons} size={30} color={colors.white_color} />
-                    <Ionicons name={"logo-facebook"} style={styles.icons} size={30} color={colors.white_color} />
-                    <Ionicons name={"logo-github"} style={styles.icons} size={30} color={colors.white_color} />
+                    <Ionicons name={"logo-instagram"} style={styles.icons} size={30} color={'rgba(' + colors.white_color + ', 1)'} />
+                    <Ionicons name={"logo-facebook"} style={styles.icons} size={30} color={'rgba(' + colors.white_color + ', 1)'} />
+                    <Ionicons name={"logo-github"} style={styles.icons} size={30} color={'rgba(' + colors.white_color + ', 1)'} />
                 </View>
                 <View style={styles.legalcontainer}>
                     <Text style={styles.text}>Imprint</Text>
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: colors.black_color,
+        backgroundColor: 'rgba(' + colors.black_color + ', 1)',
         height: 200
     },
     firstcolumn: {
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 5
     },
     text: {
-        color: colors.white_color,
+        color: 'rgba(' + colors.white_color + ', 1)',
         paddingHorizontal: 5
     }
 })

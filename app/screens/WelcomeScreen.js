@@ -106,15 +106,15 @@ const HorizontalScroll = () => {
 
 const styles = StyleSheet.create({
     contianer: {
-        backgroundColor: colors.white_color,
+        backgroundColor: 'rgba(' + colors.white_color + ', 1)',
     },
     landingPage: {
         height: 200,
         margin: 5,
         borderRadius: 10,
         width: '100%',
-        backgroundColor: colors.white_color,
-        shadowColor: colors.black_color,
+        backgroundColor: 'rgba(' + colors.white_color + ', 1)',
+        shadowColor: 'rgba(' + colors.black_color + ', 1)',
         shadowOpacity: 0.15,
         shadowRadius: 15,
         justifyContent: 'center', 
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
     input: {
         height: 40,
         margin: 40,
-        borderColor: colors.primary_accent_color,
+        borderColor: 'rgba(' + colors.primary_accent_color + ', 1)',
         borderWidth: 1,
         padding: 10,
         borderRadius: 5,
@@ -140,8 +140,8 @@ const styles = StyleSheet.create({
         height: 40,
         borderRadius: 10,
         width: '100%',
-        backgroundColor: colors.white_color,
-        shadowColor: colors.black_color,
+        backgroundColor: 'rgba(' + colors.white_color + ', 1)',
+        shadowColor: 'rgba(' + colors.black_color + ', 1)',
         shadowOpacity: 0.15,
         shadowRadius: 15,
         justifyContent: 'center', 
@@ -150,8 +150,8 @@ const styles = StyleSheet.create({
     newJobs: {
         margin: 5,
         borderRadius: 10,
-        backgroundColor: colors.white_color,
-        shadowColor: colors.black_color,
+        backgroundColor: 'rgba(' + colors.white_color + ', 1)',
+        shadowColor: 'rgba(' + colors.black_color + ', 1)',
         shadowOpacity: 0.15,
         shadowRadius: 15
     },
@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: '50%',
         transform: [{ translateY: '-50%'}],
-        backgroundColor: colors.white_color,
+        backgroundColor: 'rgba(' + colors.white_color + ', 1)',
         opacity: 0.5,
         borderRadius: 10
     },

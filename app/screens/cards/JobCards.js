@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         height: 300,
         width: 220,
         borderRadius: 10,
-        shadowColor: colors.black_color,
+        shadowColor: 'rgba(' + colors.black_color + ', 1)',
         shadowOpacity: 0.15,
         shadowRadius: 15,
         overflow: 'hidden'
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
         paddingRight: 5,
         marginBottom: 10,
         color: 'black',
-        backgroundColor: colors.secondary_accent_color,
+        backgroundColor: 'rgba(' + colors.secondary_accent_color + ', 1)',
         borderRadius: 5
     },
     title: {

@@ -52,15 +52,15 @@ function InsertJobScreen( {navigation} ) {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: colors.white_color
+        backgroundColor: 'rgba(' + colors.white_color + ', 1)'
     },
     header: {
         height: 100,
         margin: 5,
         borderRadius: 10,
         width: '100%',
-        backgroundColor: colors.white_color,
-        shadowColor: colors.black_color,
+        backgroundColor: 'rgba(' + colors.white_color + ', 1)',
+        shadowColor: 'rgba(' + colors.black_color + ', 1)',
         shadowOpacity: 0.15,
         shadowRadius: 15,
         justifyContent: 'center'
@@ -74,8 +74,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         margin: 5,
         borderRadius: 10,
-        backgroundColor: colors.white_color,
-        shadowColor: colors.black_color,
+        backgroundColor: 'rgba(' + colors.white_color + ', 1)',
+        shadowColor: 'rgba(' + colors.black_color + ', 1)',
         shadowOpacity: 0.15,
         shadowRadius: 15
     },
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     picturetext: {
         fontSize: 60,
         borderWidth: 2,
-        borderColor: colors.primary_accent_color,
+        borderColor: 'rgba(' + colors.primary_accent_color + ', 1)',
         borderRadius: 10,
         opacity: 0.3
     },
@@ -122,13 +122,13 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         padding: 5,
         borderWidth: 1,
-        borderColor: colors.primary_accent_color,
+        borderColor: 'rgba(' + colors.primary_accent_color + ', 1)',
         borderRadius: 5
     },
     button: {
         width: 300,
-        backgroundColor: colors.primary_accent_color,
-        borderColor: colors.primary_accent_color,
+        backgroundColor: 'rgba(' + colors.primary_accent_color + ', 1)',
+        borderColor: 'rgba(' + colors.primary_accent_color + ', 1)',
         margin: 5,
         borderWidth: 1,
         padding: 10,

@@ -47,7 +47,7 @@ const ToggleSignInSignUp = (props) => {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: colors.white_color,
+        backgroundColor: 'rgba(' + colors.white_color + ', 1)',
     }
 })
 

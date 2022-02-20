@@ -50,7 +50,7 @@ const NavbarTabs = (props) => {
                         }
                         return <Ionicons name={iconName} size={size} color={color} />
                     },
-                    tabBarActiveTintColor: colors.primary_color,
+                    tabBarActiveTintColor: 'rgba(' + colors.primary_color + ', 1)',
                     tabBarInactiveTintColor: 'gray',
                     tabBarShowLabel: true,
                 })}

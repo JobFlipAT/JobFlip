@@ -46,8 +46,8 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         marginLeft: '20%',
         width: '60%',
-        backgroundColor: colors.white_color,
-        shadowColor: colors.black_color,
+        backgroundColor: 'rgba(' + colors.white_color + ', 1)',
+        shadowColor: 'rgba(' + colors.black_color + ', 1)',
         shadowOpacity: 0.15,
         shadowRadius: 15,
     },
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     },
     title3: {
         fontSize: 20,
-        color: colors.primary_accent_color,
+        color: 'rgba(' + colors.primary_accent_color + ', 1)',
     },
     body: {
         flexDirection: 'row',
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     },
     input: {
         width: 300,
-        borderColor: colors.black_color,
+        borderColor: 'rgba(' + colors.black_color + ', 1)',
         margin: 5,
         borderWidth: 1,
         padding: 10,
@@ -83,8 +83,8 @@ const styles = StyleSheet.create({
     },
     button: {
         width: 300,
-        backgroundColor: colors.primary_accent_color,
-        borderColor: colors.primary_accent_color,
+        backgroundColor: 'rgba(' + colors.primary_accent_color + ', 1)',
+        borderColor: 'rgba(' + colors.primary_accent_color + ', 1)',
         margin: 5,
         borderWidth: 1,
         padding: 10,
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     news: {
         marginLeft: '5%',
         margin: 5,
-        // borderColor: colors.black_color,
+        // borderColor: 'rgba(' + colors.black_color + ', 1)',
         // borderLeftWidth: 1,
         paddingLeft: '5%',
     },
