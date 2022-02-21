@@ -1,11 +1,11 @@
 {
   "files": {
-    "app.js": "/jobflip-react-native/static/js/app.15d6e694.chunk.js",
-    "app.js.map": "/jobflip-react-native/static/js/app.15d6e694.chunk.js.map",
+    "app.js": "/jobflip-react-native/static/js/app.e5862358.chunk.js",
+    "app.js.map": "/jobflip-react-native/static/js/app.e5862358.chunk.js.map",
     "runtime~app.js": "/jobflip-react-native/static/js/runtime~app.ccf7ac88.js",
     "runtime~app.js.map": "/jobflip-react-native/static/js/runtime~app.ccf7ac88.js.map",
-    "static/js/2.c403380b.chunk.js": "/jobflip-react-native/static/js/2.c403380b.chunk.js",
-    "static/js/2.c403380b.chunk.js.map": "/jobflip-react-native/static/js/2.c403380b.chunk.js.map",
+    "static/js/2.6dbc5cc8.chunk.js": "/jobflip-react-native/static/js/2.6dbc5cc8.chunk.js",
+    "static/js/2.6dbc5cc8.chunk.js.map": "/jobflip-react-native/static/js/2.6dbc5cc8.chunk.js.map",
     "fonts/AntDesign.ttf": "/jobflip-react-native/./fonts/AntDesign.ttf",
     "fonts/Entypo.ttf": "/jobflip-react-native/./fonts/Entypo.ttf",
     "fonts/Feather.ttf": "/jobflip-react-native/./fonts/Feather.ttf",
@@ -24,7 +24,7 @@
     "index.html": "/jobflip-react-native/index.html",
     "manifest.json": "/jobflip-react-native/manifest.json",
     "serve.json": "/jobflip-react-native/serve.json",
-    "static/js/2.c403380b.chunk.js.LICENSE.txt": "/jobflip-react-native/static/js/2.c403380b.chunk.js.LICENSE.txt",
+    "static/js/2.6dbc5cc8.chunk.js.LICENSE.txt": "/jobflip-react-native/static/js/2.6dbc5cc8.chunk.js.LICENSE.txt",
     "static/media/Logo.png": "/jobflip-react-native/static/media/Logo.a83fe059.png",
     "static/media/arrow-down.png": "/jobflip-react-native/static/media/arrow-down.772a5382.png",
     "static/media/arrow-up.png": "/jobflip-react-native/static/media/arrow-up.0b0d1af9.png",
@@ -38,7 +38,7 @@
   },
   "entrypoints": [
     "static/js/runtime~app.ccf7ac88.js",
-    "static/js/2.c403380b.chunk.js",
-    "static/js/app.15d6e694.chunk.js"
+    "static/js/2.6dbc5cc8.chunk.js",
+    "static/js/app.e5862358.chunk.js"
   ]
 }
