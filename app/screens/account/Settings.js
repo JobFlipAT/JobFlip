@@ -1,24 +1,28 @@
 import React, { useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
+
 import colors from '../../config/colors';
-import General from './settingsScreens/General';
-import Location from './settingsScreens/Location';
+import EMail from './settingsScreens/EMail';
+import Password from './settingsScreens/Password';
 import Profile from './settingsScreens/Profile';
+import Help from './settingsScreens/Help';
 
 function Settings(props) {
-    const [settingsPage, setSettingsPage] = useState('General')
+    const [settingsPage, setSettingsPage] = useState('Profile')
 
     function toggleSettings (page) {
         setSettingsPage(page);
     }
 
     function DisplaySettings () {
-        if (settingsPage === 'General') {
-            return ( <General userName={props.userName} /> );
-        } else if (settingsPage === 'Location') {
-            return ( <Location /> );
-        } else if (settingsPage === 'Profile') {
-            return ( <Profile /> );
+        if (settingsPage === 'Profile') {
+            return ( <Profile userName={props.userName} /> );
+        } else if (settingsPage === 'Password') {
+            return ( <Password /> );
+        } else if (settingsPage === 'EMail') {
+            return ( <EMail /> );
+        } else {
+            return ( <Help /> );
         }
     }
 
@@ -26,20 +30,22 @@ function Settings(props) {
         <View style={styles.container}>
             <View style={styles.tabbar}>
                 <Text style={styles.tabbartitle}>Settings</Text>
-                <Pressable style={styles.tabbarbutton} onPress={() => toggleSettings('General')}>
-                    <Text style={styles.tabbartext}>General</Text>
+                <Pressable style={[styles.tabbarbutton, {borderLeftWidth: settingsPage === 'Profile' ? 1 : 0}]} onPress={() => toggleSettings('Profile')}>
+                    <Text style={styles.tabbartext}>Profil bearbeiten</Text>
                 </Pressable>
-                <Pressable style={styles.tabbarbutton} onPress={() => toggleSettings('Location')}>
-                    <Text style={styles.tabbartext}>Location</Text>
+                <Pressable style={[styles.tabbarbutton, {borderLeftWidth: settingsPage === 'Password' ? 1 : 0}]} onPress={() => toggleSettings('Password')}>
+                    <Text style={styles.tabbartext}>Passwort ändern</Text>
                 </Pressable>
-                <Pressable style={styles.tabbarbutton} onPress={() => toggleSettings('Profile')}>
-                    <Text style={styles.tabbartext}>Profile</Text>
+                <Pressable style={[styles.tabbarbutton, {borderLeftWidth: settingsPage === 'EMail' ? 1 : 0}]} onPress={() => toggleSettings('EMail')}>
+                    <Text style={styles.tabbartext}>E-Mail</Text>
                 </Pressable>
-                <Pressable style={[styles.tabbarbutton, {borderBottomWidth: 0}]} onPress={() => toggleSettings('General')}>
-                    <Text style={styles.tabbartext}>Bankdata</Text>
+                <Pressable style={[styles.tabbarbutton, {borderBottomWidth: 0, borderLeftWidth: settingsPage === 'Help' ? 1 : 0}]} onPress={() => toggleSettings('Help')}>
+                    <Text style={styles.tabbartext}>Hilfe</Text>
                 </Pressable>
             </View>
-            <DisplaySettings />
+            <View style={styles.settings}>
+                <DisplaySettings />
+            </View>
             {/* Logout Button */}
         </View>
     );
@@ -58,8 +64,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(' + colors.white_color + ', 1)',
         shadowColor: 'rgba(' + colors.black_color + ', 1)',
         shadowOpacity: 0.15,
-        shadowRadius: 15,
-        justifyContent: 'center'
+        shadowRadius: 15
     },
     tabbartitle: {
         fontSize: 22,
@@ -68,7 +73,6 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     },
     tabbarbutton: {
-        flex: 1,
         marginHorizontal: 15,
         paddingVertical: 5,
         borderBottomWidth: 1,
@@ -76,6 +80,17 @@ const styles = StyleSheet.create({
     },
     tabbartext: {
         fontSize: 16,
+    }, 
+    settings: {
+        flex: 0.8,
+        margin: 5,
+        borderRadius: 10,
+        backgroundColor: 'rgba(' + colors.white_color + ', 1)',
+        shadowColor: 'rgba(' + colors.black_color + ', 1)',
+        shadowOpacity: 0.15,
+        shadowRadius: 15,
+        justifyContent: 'center', 
+        alignItems: 'center'
     }
 })
 
