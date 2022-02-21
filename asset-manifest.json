@@ -1,7 +1,7 @@
 {
   "files": {
-    "app.js": "/jobflip-react-native/static/js/app.e5862358.chunk.js",
-    "app.js.map": "/jobflip-react-native/static/js/app.e5862358.chunk.js.map",
+    "app.js": "/jobflip-react-native/static/js/app.bddccc9d.chunk.js",
+    "app.js.map": "/jobflip-react-native/static/js/app.bddccc9d.chunk.js.map",
     "runtime~app.js": "/jobflip-react-native/static/js/runtime~app.ccf7ac88.js",
     "runtime~app.js.map": "/jobflip-react-native/static/js/runtime~app.ccf7ac88.js.map",
     "static/js/2.6dbc5cc8.chunk.js": "/jobflip-react-native/static/js/2.6dbc5cc8.chunk.js",
@@ -39,6 +39,6 @@
   "entrypoints": [
     "static/js/runtime~app.ccf7ac88.js",
     "static/js/2.6dbc5cc8.chunk.js",
-    "static/js/app.e5862358.chunk.js"
+    "static/js/app.bddccc9d.chunk.js"
   ]
 }
