@@ -4,7 +4,8 @@ import { StyleSheet, Text, View } from 'react-native';
 function Help(props) {
     return (
         <View style={styles.container}>
-            <Text>Helloasdf</Text>
+            <Text>Hilfebereich</Text>
+            <Text>Support Kontaktieren</Text>
         </View>
     );
 }

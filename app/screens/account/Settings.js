@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 import colors from '../../config/colors';
-import EMail from './settingsScreens/EMail';
+import Notification from './settingsScreens/Notification ';
 import Password from './settingsScreens/Password';
 import Profile from './settingsScreens/Profile';
 import Help from './settingsScreens/Help';
@@ -19,8 +19,8 @@ function Settings(props) {
             return ( <Profile userName={props.userName} /> );
         } else if (settingsPage === 'Password') {
             return ( <Password /> );
-        } else if (settingsPage === 'EMail') {
-            return ( <EMail /> );
+        } else if (settingsPage === 'Notification') {
+            return ( <Notification /> );
         } else {
             return ( <Help /> );
         }
@@ -30,16 +30,16 @@ function Settings(props) {
         <View style={styles.container}>
             <View style={styles.tabbar}>
                 <Text style={styles.tabbartitle}>Settings</Text>
-                <Pressable style={[styles.tabbarbutton, {borderLeftWidth: settingsPage === 'Profile' ? 1 : 0}]} onPress={() => toggleSettings('Profile')}>
+                <Pressable style={settingsPage === 'Profile' ? styles.tabbarbuttonaktive : styles.tabbarbutton} onPress={() => toggleSettings('Profile')}>
                     <Text style={styles.tabbartext}>Profil bearbeiten</Text>
                 </Pressable>
-                <Pressable style={[styles.tabbarbutton, {borderLeftWidth: settingsPage === 'Password' ? 1 : 0}]} onPress={() => toggleSettings('Password')}>
+                <Pressable style={settingsPage === 'Password' ? styles.tabbarbuttonaktive : styles.tabbarbutton} onPress={() => toggleSettings('Password')}>
                     <Text style={styles.tabbartext}>Passwort ändern</Text>
                 </Pressable>
-                <Pressable style={[styles.tabbarbutton, {borderLeftWidth: settingsPage === 'EMail' ? 1 : 0}]} onPress={() => toggleSettings('EMail')}>
-                    <Text style={styles.tabbartext}>E-Mail</Text>
+                <Pressable style={settingsPage === 'Notification' ? styles.tabbarbuttonaktive : styles.tabbarbutton} onPress={() => toggleSettings('Notification')}>
+                    <Text style={styles.tabbartext}>Notification</Text>
                 </Pressable>
-                <Pressable style={[styles.tabbarbutton, {borderBottomWidth: 0, borderLeftWidth: settingsPage === 'Help' ? 1 : 0}]} onPress={() => toggleSettings('Help')}>
+                <Pressable style={settingsPage === 'Help' ? styles.tabbarbuttonaktive : styles.tabbarbutton} onPress={() => toggleSettings('Help')}>
                     <Text style={styles.tabbartext}>Hilfe</Text>
                 </Pressable>
             </View>
@@ -73,10 +73,20 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     },
     tabbarbutton: {
+        paddingLeft: 10,
         marginHorizontal: 15,
         paddingVertical: 5,
         borderBottomWidth: 1,
         borderColor: 'rgba(' + colors.gray_color + ', 0.5)'
+    },
+    tabbarbuttonaktive: {
+        paddingLeft: 10,
+        borderLeftWidth: 3,
+        marginHorizontal: 15,
+        paddingVertical: 5,
+        borderBottomWidth: 1,
+        borderLeftColor: 'rgba(' + colors.primary_accent_color + ', 1)',
+        borderBottomColor: 'rgba(' + colors.gray_color + ', 0.5)'
     },
     tabbartext: {
         fontSize: 16,

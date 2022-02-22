@@ -132,8 +132,8 @@ const styles = StyleSheet.create({
         margin: 5,
         borderWidth: 1,
         padding: 10,
-        borderRadius: 5,
-    },
+        borderRadius: 5
+    }
 })
 
 export default InsertJobScreen;

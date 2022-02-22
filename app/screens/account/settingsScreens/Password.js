@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, TextInput, View } from 'react-native';
+import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import colors from '../../../config/colors';
 
 function Password(props) {
@@ -29,6 +29,18 @@ function Password(props) {
                     <TextInput style={styles.input} />
                 </View>
             </View>
+                <View style={styles.buttonWrapper}>
+                    <View style={{flex: 1, paddingRight: 20}}></View>
+                    <Pressable style={styles.button}>
+                        <Text>Passwort ändern</Text>
+                    </Pressable>
+                </View>
+                <View style={styles.buttonWrapper}>
+                    <View style={{flex: 1, paddingRight: 20}}></View>
+                    <Pressable>
+                        <Text style={styles.link}>Passwort vergessen?</Text>
+                    </Pressable>
+                </View>
         </View>
     );
 }
@@ -57,11 +69,27 @@ const styles = StyleSheet.create({
         paddingRight: 20
     },
     input: {
-        width: 300,
+        width: 216,
         borderWidth: 1,
         borderColor: 'rgba(' + colors.gray_color + ', 0.5)',
         borderRadius: 5,
         padding: 5
+    },
+    buttonWrapper: {
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        margin: 5
+    },
+    button: {
+        flex: 1,
+        backgroundColor: 'rgba(' + colors.primary_accent_color + ', 1)',
+        borderColor: 'rgba(' + colors.primary_accent_color + ', 1)',
+        borderWidth: 1,
+        padding: 5,
+        borderRadius: 5
+    },
+    link: {
+        color: 'rgba(' + colors.primary_accent_color + ', 1)'
     }
 })
 
