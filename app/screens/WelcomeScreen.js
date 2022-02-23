@@ -24,7 +24,7 @@ function WelcomeScreen( {navigation} ) {
                         </View>
                     </View> */}
                 </View>
-                <Text>Die neusten Jobs:</Text>
+                <Text style={styles.title}>Die neusten Jobs:</Text>
                 <HorizontalScroll />
                 <Footer navigation={navigation} />  
             </ScrollView>

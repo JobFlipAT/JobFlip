@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Modal, Pressable, Image } from 'react-native';
+import { SecondaryButton } from '../components/Button';
 
 function JobDetailCard(props) {
     return (
@@ -15,12 +16,7 @@ function JobDetailCard(props) {
             <View style={styles.centeredView}>
                 <View style={styles.modalView}>
                     <View style={styles.buttonClose}>
-                        <Pressable
-                            style={styles.button}
-                            onPress={() => props.setModalVisible(!props.modalVisible)}
-                        >
-                            <Text style={styles.textStyle}>X</Text>
-                        </Pressable>
+                        <SecondaryButton onPress={() => props.setModalVisible(!props.modalVisible)} text={'X'}/>
                     </View>
                     <View style={styles.info}>
                         <View style={styles.infosection}>
@@ -32,12 +28,9 @@ function JobDetailCard(props) {
                             <Text style={styles.text}>{props.rating}</Text>
                         </View>
                     </View>
-                    <Pressable
-                        style={styles.button}
-                        onPress={() => props.setModalVisible(!props.modalVisible)}
-                    >
-                        <Text style={styles.textStyle}>Close</Text>
-                    </Pressable>
+                    <View style={styles.buttonClose}>
+                        <SecondaryButton onPress={() => props.setModalVisible(!props.modalVisible)} text={'Schließen'} />
+                    </View>
                 </View>
             </View>
         </Modal>
@@ -65,14 +58,7 @@ const styles = StyleSheet.create({
         elevation: 5
     },
     buttonClose: {
-        flex: 0.1,
-        alignItems: 'flex-end'
-    },
-    button: {
-        borderRadius: 20,
-        padding: 10,
-        elevation: 2,
-        backgroundColor: "#F194FF"
+        alignSelf: 'flex-end'
     },
     info: {
         flex: 1,

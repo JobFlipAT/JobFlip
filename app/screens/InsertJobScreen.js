@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, TextInput, Pressable } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TextInput } from 'react-native';
 import colors from '../config/colors';
+import { PrimaryButton } from './components/Button';
 import Footer from './footer/Footer';
 
 function InsertJobScreen( {navigation} ) {
@@ -41,9 +42,7 @@ function InsertJobScreen( {navigation} ) {
                         </View>
                     </View>
                 </View>
-                <Pressable onPress={() => console.log('inseriert')} style={styles.button}>
-                    <Text>Job inserieren</Text>
-                </Pressable>
+                <PrimaryButton text={'Job inserieren'} onPress={() => console.log('inseriert')}/>
             </ScrollView>
             <Footer navigation={navigation} />  
         </>
@@ -123,15 +122,6 @@ const styles = StyleSheet.create({
         padding: 5,
         borderWidth: 1,
         borderColor: 'rgba(' + colors.primary_accent_color + ', 1)',
-        borderRadius: 5
-    },
-    button: {
-        width: 300,
-        backgroundColor: 'rgba(' + colors.primary_accent_color + ', 1)',
-        borderColor: 'rgba(' + colors.primary_accent_color + ', 1)',
-        margin: 5,
-        borderWidth: 1,
-        padding: 10,
         borderRadius: 5
     }
 })
