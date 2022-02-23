@@ -1,6 +1,8 @@
 import React from 'react';
-import { View, Text, StyleSheet, Modal, Pressable, Image } from 'react-native';
-import { SecondaryButton } from '../components/Button';
+import { View, Text, StyleSheet, Modal, Image } from 'react-native';
+import { PrimaryButton, SecondaryButton, TertiaryButton } from '../components/Button';
+import { Ionicons } from '@expo/vector-icons';
+import colors from '../../config/colors';
 
 function JobDetailCard(props) {
     return (
@@ -24,11 +26,23 @@ function JobDetailCard(props) {
                         </View>
                         <View style={styles.infosection}>
                             <Text style={styles.title}>{props.title}</Text>
-                            <Text style={styles.text}>{props.pricing}</Text>
-                            <Text style={styles.text}>{props.rating}</Text>
+                            <View style={styles.section}>
+                                <Text style={styles.infoText}>Arbeitgeber </Text>
+                                <Text style={styles.infoText}><Ionicons name="star-outline"></Ionicons>{' ' + props.rating}</Text>
+                            </View>
+                            <View style={styles.section}>
+                                <Text style={styles.infoText}>{props.pricing}</Text>
+                            </View>
+                            <View style={styles.section}>
+                                <Text style={styles.infoText}>Description (Ort, Wann, Was)</Text>
+                            </View>
+                            <View style={styles.reportJob}>
+                                <PrimaryButton text={'Job annehmen'} />
+                            </View>
                         </View>
                     </View>
                     <View style={styles.buttonClose}>
+                        <TertiaryButton text={'Job melden'} style={{paddingRight: 25}} />
                         <SecondaryButton onPress={() => props.setModalVisible(!props.modalVisible)} text={'Schließen'} />
                     </View>
                 </View>
@@ -45,7 +59,7 @@ const styles = StyleSheet.create({
     modalView: {
         flex: 1,
         margin: 150,
-        backgroundColor: "white",
+        backgroundColor: 'rgba(' + colors.white_color + ', 1)',
         borderRadius: 20,
         padding: 35,
         shadowColor: "#000",
@@ -58,6 +72,7 @@ const styles = StyleSheet.create({
         elevation: 5
     },
     buttonClose: {
+        flexDirection: 'row',
         alignSelf: 'flex-end'
     },
     info: {
@@ -66,19 +81,31 @@ const styles = StyleSheet.create({
     },
     infosection:{
         flex: 0.5,
-        margin: 20
+        marginHorizontal: 20,
+        marginBottom: 10
     },
     title: {
         fontSize: 20,
         fontWeight: 'bold',
         marginBottom: 15
     },
+    section: {
+        flexDirection: 'row',
+        borderTopWidth: 1
+    },
     text: {
       marginBottom: 15
+    },
+    infoText: {
+        padding: 5
     },
     image: {
         width: '100%',
         height: '100%'
+    },
+    reportJob: {
+        alignSelf: 'flex-end',
+        justifyContent: 'flex-end'
     }
 })
 

@@ -4,7 +4,7 @@ import colors from '../../config/colors'
 
 const PrimaryButton = (props) => {
   return (
-    <Pressable onPress={props.onPress} style={styles.primaryButton}>
+    <Pressable onPress={props.onPress} style={[styles.primaryButton, props.style]}>
         <Text style={styles.primaryText}>{props.text}</Text>
     </Pressable>
   )
@@ -12,7 +12,7 @@ const PrimaryButton = (props) => {
 
 const SecondaryButton = (props) => {
   return (
-    <Pressable onPress={props.onPress} style={styles.secondaryButton}>
+    <Pressable onPress={props.onPress} style={[styles.secondaryButton, props.style]}>
         <Text style={styles.secondaryText}>{props.text}</Text>
     </Pressable>
   )
@@ -20,7 +20,7 @@ const SecondaryButton = (props) => {
 
 const TertiaryButton = (props) => {
   return (
-    <Pressable onPress={props.onPress} style={styles.tertiaryButton}>
+    <Pressable onPress={props.onPress} style={[styles.tertiaryButton, props.style]}>
         <Text style={styles.tertiaryText}>{props.text}</Text>
     </Pressable>
   )

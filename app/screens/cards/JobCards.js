@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Text, StyleSheet, Image, Pressable } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+
 import colors from '../../config/colors';
 import JobDetailCard from './JobDetailCard';
 
@@ -12,7 +14,7 @@ function JobCards(props) {
                 <Image source={props.img} style={styles.image} />
                 <Text style={styles.pricing}>{props.pricing}</Text>
                 <Text style={styles.title}>{props.title}</Text>
-                <Text style={styles.rating}>{props.rating}</Text>
+                <Text style={styles.rating}><Ionicons name="star-half"></Ionicons>{' ' + props.rating}</Text>
             </Pressable>
             <JobDetailCard modalVisible={modalVisivile} setModalVisible={setModalVisible} 
                 img={props.img} pricing={props.pricing} title={props.title} rating={props.rating} />

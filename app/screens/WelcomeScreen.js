@@ -67,16 +67,16 @@ const HorizontalScroll = () => {
         return (
             <View style={styles.newJobs}>
                 <Animated.View style={{transform: [{ translateX: scroll}], flexDirection: 'row'}}>
-                    <JobCards img={require('../assets/garden.jpg')} pricing='200€/h' title='This is the Title' rating='5S (5)' />
-                    <JobCards img={require('../assets/city.jpg')} pricing='100€/h' title='This is another Title' rating='4.3S (12K)'  />
-                    <JobCards img={require('../assets/kitten.jpg')} pricing='2200€/h' title='The same' rating='1.2S (4.5K)'  />
-                    <JobCards img={require('../assets/opel-gt.jpg')} pricing='45€/h' title='Auto Waschen' rating='5S (5)'  />
-                    <JobCards img={require('../assets/playground.jpg')} pricing='30€/h' title='This is the Title' rating='5S (5)'  />
-                    <JobCards img={require('../assets/garden.jpg')} pricing='220€/h' title='This is the Title' rating='5S (5)'  />
-                    <JobCards img={require('../assets/city.jpg')} pricing='150€/h' title='This is the Title' rating='5S (5)'  />
-                    <JobCards img={require('../assets/kitten.jpg')} pricing='340€/h' title='This is the Title' rating='5S (5)'  />
-                    <JobCards img={require('../assets/opel-gt.jpg')} pricing='200€/h' title='This is the Title' rating='5S (5)'  />
-                    <JobCards img={require('../assets/playground.jpg')} pricing='120€/h' title='This is the Title' rating='5S (5)'  />
+                    <JobCards img={require('../assets/garden.jpg')} pricing='200€/h' title='This is the Title' rating='5 (5)' />
+                    <JobCards img={require('../assets/city.jpg')} pricing='100€/h' title='This is another Title' rating='4.3 (12K)'  />
+                    <JobCards img={require('../assets/kitten.jpg')} pricing='2200€/h' title='The same' rating='1.2 (4.5K)'  />
+                    <JobCards img={require('../assets/opel-gt.jpg')} pricing='45€/h' title='Auto Waschen' rating='5 (5)'  />
+                    <JobCards img={require('../assets/playground.jpg')} pricing='30€/h' title='This is the Title' rating='5 (5)'  />
+                    <JobCards img={require('../assets/garden.jpg')} pricing='220€/h' title='This is the Title' rating='5 (5)'  />
+                    <JobCards img={require('../assets/city.jpg')} pricing='150€/h' title='This is the Title' rating='5 (5)'  />
+                    <JobCards img={require('../assets/kitten.jpg')} pricing='340€/h' title='This is the Title' rating='5 (5)'  />
+                    <JobCards img={require('../assets/opel-gt.jpg')} pricing='200€/h' title='This is the Title' rating='5 (5)'  />
+                    <JobCards img={require('../assets/playground.jpg')} pricing='120€/h' title='This is the Title' rating='5 (5)'  />
                 </Animated.View>
                 <Pressable onPress={scrollRight} style={[styles.scrollButton, styles.scrollButtonRight]}>
                     <Ionicons name="chevron-forward-outline" size={80}></Ionicons>
@@ -89,16 +89,16 @@ const HorizontalScroll = () => {
     } else {
         return (
             <ScrollView style={styles.newJobs} horizontal={true}>
-                <JobCards img={require('../assets/garden.jpg')} pricing='200€/h' title='This is the Title' rating='5S (5)' />
-                <JobCards img={require('../assets/city.jpg')} pricing='100€/h' title='This is another Title' rating='4.3S (12K)'  />
-                <JobCards img={require('../assets/kitten.jpg')} pricing='2200€/h' title='The same' rating='1.2S (4.5K)'  />
-                <JobCards img={require('../assets/opel-gt.jpg')} pricing='45€/h' title='Auto Waschen' rating='5S (5)'  />
-                <JobCards img={require('../assets/playground.jpg')} pricing='30€/h' title='This is the Title' rating='5S (5)'  />
-                <JobCards img={require('../assets/garden.jpg')} pricing='220€/h' title='This is the Title' rating='5S (5)'  />
-                <JobCards img={require('../assets/city.jpg')} pricing='150€/h' title='This is the Title' rating='5S (5)'  />
-                <JobCards img={require('../assets/kitten.jpg')} pricing='340€/h' title='This is the Title' rating='5S (5)'  />
-                <JobCards img={require('../assets/opel-gt.jpg')} pricing='200€/h' title='This is the Title' rating='5S (5)'  />
-                <JobCards img={require('../assets/playground.jpg')} pricing='120€/h' title='This is the Title' rating='5S (5)'  />
+                <JobCards img={require('../assets/garden.jpg')} pricing='200€/h' title='This is the Title' rating='5 (5)' />
+                <JobCards img={require('../assets/city.jpg')} pricing='100€/h' title='This is another Title' rating='4.3 (12K)'  />
+                <JobCards img={require('../assets/kitten.jpg')} pricing='2200€/h' title='The same' rating='1.2 (4.5K)'  />
+                <JobCards img={require('../assets/opel-gt.jpg')} pricing='45€/h' title='Auto Waschen' rating='5 (5)'  />
+                <JobCards img={require('../assets/playground.jpg')} pricing='30€/h' title='This is the Title' rating='5 (5)'  />
+                <JobCards img={require('../assets/garden.jpg')} pricing='220€/h' title='This is the Title' rating='5 (5)'  />
+                <JobCards img={require('../assets/city.jpg')} pricing='150€/h' title='This is the Title' rating='5 (5)'  />
+                <JobCards img={require('../assets/kitten.jpg')} pricing='340€/h' title='This is the Title' rating='5 (5)'  />
+                <JobCards img={require('../assets/opel-gt.jpg')} pricing='200€/h' title='This is the Title' rating='5 (5)'  />
+                <JobCards img={require('../assets/playground.jpg')} pricing='120€/h' title='This is the Title' rating='5 (5)'  />
             </ScrollView>
         )
     }
