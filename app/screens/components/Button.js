@@ -19,9 +19,14 @@ const SecondaryButton = (props) => {
 }
 
 const TertiaryButton = (props) => {
+  //Landingpage icon not clickable
+  console.log(props)
   return (
     <Pressable onPress={props.onPress} style={[styles.tertiaryButton, props.style]}>
         <Text style={styles.tertiaryText}>{props.text}</Text>
+        {/* {() => {
+          if (props.icon !== null) return props.icon
+        }} */}
     </Pressable>
   )
 }

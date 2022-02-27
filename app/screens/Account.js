@@ -8,6 +8,7 @@ import Signup from './account/Signup';
 import Footer from './footer/Footer';
 
 function Account( {navigation, route} ) {
+    console.log(route.params)
     return (
         <>
             <ScrollView style={styles.container}>

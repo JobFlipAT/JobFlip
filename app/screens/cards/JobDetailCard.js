@@ -5,6 +5,27 @@ import { Ionicons } from '@expo/vector-icons';
 import colors from '../../config/colors';
 
 function JobDetailCard(props) {
+    const DescriptionSection = () => {
+        if (props.userName !== '') {
+            return (
+                <View style={styles.sectionDescription}>
+                    <Text style={styles.infoText}>Was: Auto waschen</Text>
+                    <Text style={styles.infoText}>Ort: Österreich, Dornbirn 6850, Hinterhof 8</Text>
+                    <Text style={styles.infoText}>Wann: Vom 01.03-10.03, Von 8-18 Uhr</Text>
+                </View>
+            )
+        }else {
+            return (
+                <View style={styles.sectionDescription}>
+                    <Text style={styles.infoText}>Was: Auto waschen</Text>
+                    <Text style={styles.infoText}>Für mehr Details</Text>
+                    <TertiaryButton onPress={() => {props.navigation.navigate('Sign In / Sign up'); props.setModalVisible(!props.modalVisible)}} text={'melde'} />
+                    <Text style={styles.infoText}>dich an</Text>
+                </View>
+            )
+        }
+    }
+
     return (
         <Modal
             animationType="fade"
@@ -28,14 +49,12 @@ function JobDetailCard(props) {
                             <Text style={styles.title}>{props.title}</Text>
                             <View style={styles.section}>
                                 <Text style={styles.infoText}>Arbeitgeber </Text>
-                                <Text style={styles.infoText}><Ionicons name="star-outline"></Ionicons>{' ' + props.rating}</Text>
+                                {props.calculateStars(props.rating, props.comments, styles.infoText)}
                             </View>
                             <View style={styles.section}>
                                 <Text style={styles.infoText}>{props.pricing}</Text>
                             </View>
-                            <View style={styles.section}>
-                                <Text style={styles.infoText}>Description (Ort, Wann, Was)</Text>
-                            </View>
+                            {DescriptionSection()}
                             <View style={styles.reportJob}>
                                 <PrimaryButton text={'Job annehmen'} />
                             </View>
@@ -106,6 +125,9 @@ const styles = StyleSheet.create({
     reportJob: {
         alignSelf: 'flex-end',
         justifyContent: 'flex-end'
+    },
+    sectionDescription: {
+        borderTopWidth: 1
     }
 })
 

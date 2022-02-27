@@ -23,7 +23,7 @@ const NavbarTabs = (props) => {
     if (Platform.OS === 'web') {
         return (
             <TopTab.Navigator>
-                <TopTab.Screen options={{tabBarLabel: () => <Image source={require('../../assets/Logo.png')} style={{position: 'absolute', top: -20, left: -50, resizeMode: 'center', width: 100, height: 40, }} />}} name={'Home'} component={WelcomeScreen} />
+                <TopTab.Screen options={{tabBarLabel: () => <Image source={require('../../assets/Logo.png')} style={{position: 'absolute', top: -20, left: -50, resizeMode: 'center', width: 100, height: 40, }} />}} name={'Home'} component={WelcomeScreen} initialParams={{ userName: props.userName }} />
                 <TopTab.Screen name={searchName} component={SearchScreen} />
                 <TopTab.Screen name={insertName} component={InsertJobScreen} />
                 <TopTab.Screen name={props.userName === '' ? accountName : 'Hi ' + props.userName} component={Account} initialParams={{ setUserNameValue: props.setUserNameValue, userName: props.userName }} />
@@ -55,10 +55,10 @@ const NavbarTabs = (props) => {
                     tabBarShowLabel: true,
                 })}
             >
-                <BottomTab.Screen name={homeName} component={WelcomeScreen} />
+                <BottomTab.Screen name={homeName} component={WelcomeScreen} initialParams={{ userName: props.userName }}  />
                 <BottomTab.Screen name={searchName} component={SearchScreen} />
                 <BottomTab.Screen name={insertName} component={InsertJobScreen} />
-                <BottomTab.Screen name={accountName} component={Account} />
+                <BottomTab.Screen name={accountName} component={Account} initialParams={{ setUserNameValue: props.setUserNameValue, userName: props.userName }} />
             </BottomTab.Navigator>
         )
     }
