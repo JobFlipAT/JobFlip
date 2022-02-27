@@ -6,7 +6,6 @@ import Footer from './footer/Footer';
 
 import { Ionicons } from '@expo/vector-icons';
 import { PrimaryButton, TertiaryButton } from './components/Button';
-import Video from 'react-native-video';
 
 function WelcomeScreen( {navigation, route} ) {
     return (
